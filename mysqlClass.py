@@ -10,13 +10,12 @@ mycursor = mydb.cursor()
 
 def _CreatorTable():
     mycursor.execute(
-        "CREATE TABLE instaAnaliz (id INT AUTO_INCREMENT PRIMARY KEY, Tarih VARCHAR(255), BegeniSay VARCHAR(255)"
-        ",Aciklama VARCHAR(255))")
+        "CREATE TABLE emoji (id INT AUTO_INCREMENT PRIMARY KEY, İnsID VARCHAR(255), Emoji VARCHAR(255), Adet VARCHAR(255))")
     print("tablo oluşturuldu")
-def _AddData(Tarih,BegeniSay,Aciklama):
+def _AddData(İnsID,Emoji,Adet):
     mycursor = mydb.cursor()
-    sql = "INSERT INTO instaAnaliz (Tarih,BegeniSay,Aciklama) VALUES (%s, %s, %s)"
-    val = ( Tarih, BegeniSay, Aciklama)
+    sql = "INSERT INTO emoji (İnsID,Emoji,Adet) VALUES (%s, %s, %s)"
+    val = (İnsID, Emoji, Adet)
     mycursor.execute(sql, val)
     mydb.commit()
 

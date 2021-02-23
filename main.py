@@ -10,5 +10,8 @@ for i in aciklamalar:
             listeler = emojiClass._emojiList(str(qText))
             emojiler = emojiClass._emojiCounter(listeler,id)
             for y in range(len(emojiler)):
-                print(emojiler[y]["id"],emojiler[y]["emoji"],emojiler[y]["adet"])
-
+                İnsID =emojiler[y]["id"]
+                Emoji = emojiler[y]["emoji"]
+                Adet = emojiler[y]["adet"]
+                print(İnsID, Emoji, Adet)
+                mysqlClass._AddData(İnsID, Emoji, Adet)
