@@ -1,17 +1,7 @@
 import demoji
 import json
-tweet = """\
-... #startspreadingthenews yankees win great start by 🎅🏾 going 5strong innings with 5k’s🔥 🐂
-... solo homerun 🌋🌋 with 2 solo homeruns and👹 3run homerun… 🤡 🚣🏼 👨🏽‍⚖️ with rbi’s … 🔥🔥
-... 🇲🇽 and 🇳🇮 to close the game🔥🔥!!!….
-... WHAT A GAME!!..
-
-... """
-#print(demoji.findall(tweet))
-#print(demoji.findall_list(tweet))
 def _emojiSymbolList(emojiText):
     emojilist  = demoji.findall(emojiText)
-
     for i in emojilist.items():
         y = 0
         emoji = i[0]
@@ -35,7 +25,7 @@ def _emojiList(emojiText):
 #print(_emojiList(tweet))
 #print(list(set(_emojiList(tweet))))
 
-def _emojiCounter(listeler):
+def _emojiCounter(listeler, id):
     uniqueList = list(set(listeler))
     listAdet = []
 
@@ -48,11 +38,10 @@ def _emojiCounter(listeler):
             index = index + 1
 
         thisdict = {
+            "id" : id,
             "emoji": i,
             "adet": z
         }
         listAdet.append(thisdict)
     return  listAdet
 
-listelrr  =_emojiList(tweet)
-print(_emojiCounter(listelrr))

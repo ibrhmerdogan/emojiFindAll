@@ -22,10 +22,7 @@ def _AddData(Tarih,BegeniSay,Aciklama):
 
 def _SelectData():
     mycursor = mydb.cursor()
-    mycursor.execute("select Aciklama  from inst.instaanaliz ")
+    mycursor.execute("select Aciklama, id from inst.instaanaliz ")
     myresult = mycursor.fetchall()
     return  myresult
 
-#aciklama  = _SelectData()
-#for i in aciklama:
-#    print(i)
